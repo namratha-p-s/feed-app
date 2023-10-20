@@ -22,6 +22,7 @@ struct PageView: View {
                 Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
                     Text("Rec")
                         .foregroundStyle(.black)
+                        .bold()
                 })
                 .buttonStyle(.borderedProminent)
                 .tint(Color(red: 0.99, green: 0.64, blue: 0.62))
@@ -29,6 +30,7 @@ struct PageView: View {
                 Button(action: {}, label: {
                     Text("Experience")
                         .foregroundStyle(.black)
+                        .bold()
                 })
                 .buttonStyle(.borderedProminent)
                 .tint(Color(red: 0.87, green: 0.78, blue: 0.75))
@@ -36,6 +38,7 @@ struct PageView: View {
                 Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
                     Text("Class")
                         .foregroundStyle(.black)
+                        .bold()
                 })
                 .buttonStyle(.borderedProminent)
                 .tint(Color(red: 0.87, green: 0.78, blue: 0.75))
