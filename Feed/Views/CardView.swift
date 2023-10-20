@@ -10,7 +10,7 @@ import SwiftUI
 struct CardView: View {
     @State var isViewed = false
     @State private var isShowFullText = false
-    @AppStorage("isHeartFilled") private var isHeartFilled = false
+    @Binding var isHeartFilled: Bool
     
     var body: some View {
         VStack {
@@ -54,8 +54,4 @@ struct CardView: View {
             }
         }
     }
-}
-
-#Preview {
-    CardView()
 }

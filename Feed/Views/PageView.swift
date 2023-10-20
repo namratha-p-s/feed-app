@@ -11,6 +11,7 @@ struct PageView: View {
     var imageName: String
     @State var imageWidth: CGFloat
     @State var imageHeight: CGFloat
+    @Binding var isHeartFilled: Bool
     
     var body: some View {
         ZStack{
@@ -52,7 +53,7 @@ struct PageView: View {
             
             Spacer()
             
-            CardView()
+            CardView(isHeartFilled: $isHeartFilled)
                 .background(.thinMaterial)
                 .padding()
                 .frame(

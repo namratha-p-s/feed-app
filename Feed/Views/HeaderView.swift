@@ -10,6 +10,8 @@ import SwiftUI
 struct HeaderView: View {
     
     @State var isToggleEnabled: Bool = true
+    @AppStorage("isHeartFilledP1") private var isHeartFilledP1 = false
+    @AppStorage("isHeartFilledP2") private var isHeartFilledP2 = false
     
     var body: some View {
         GeometryReader { geometry in
@@ -57,8 +59,8 @@ struct HeaderView: View {
                 Spacer()
                 
                 ScrollView {
-                    PageView(imageName: "cake-1", imageWidth: geometry.size.width, imageHeight: geometry.size.height)
-                    PageView(imageName: "margarita-1", imageWidth: geometry.size.width, imageHeight: geometry.size.height)
+                    PageView(imageName: "margarita-1", imageWidth: geometry.size.width, imageHeight: geometry.size.height, isHeartFilled: $isHeartFilledP1)
+                    PageView(imageName: "cake-1", imageWidth: geometry.size.width, imageHeight: geometry.size.height, isHeartFilled: $isHeartFilledP2)
                 }
             }
         }
