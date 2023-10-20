@@ -28,12 +28,14 @@ struct HeaderView: View {
                                 Capsule()
                                     .fill(self.isToggleEnabled ? Color(red: 0.87, green: 0.78, blue: 0.75) : Color(red: 0.80, green: 0.64, blue: 0.59))
                                     .frame(width: 100, height: 35)
+                                    .offset(x: self.isToggleEnabled ? 0 : 90)
+                                    .padding()
                                     .overlay(Text("Stay Local").bold())
-                                    .offset(x: 0)
                                 
                                 Capsule()
                                     .fill(self.isToggleEnabled ? Color(red: 0.80, green: 0.64, blue: 0.59) : Color(red: 0.87, green: 0.78, blue: 0.75))
                                     .frame(width: 100, height: 35)
+                                    .padding()
                                     .overlay(Text("Go Global").bold())
                                     .offset(x: 0)
                             }
