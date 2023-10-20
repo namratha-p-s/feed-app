@@ -16,12 +16,14 @@ struct ContentView: View {
                         .symbolRenderingMode(.palette)
                         .foregroundStyle(.black)
                 }
+            
             HeaderView()
                 .tabItem {
                     Image(systemName: "plus")
                         .symbolRenderingMode(.palette)
                         .foregroundStyle(.black)
                 }
+            
             HeaderView()
                 .tabItem {
                     Image(systemName: "globe")

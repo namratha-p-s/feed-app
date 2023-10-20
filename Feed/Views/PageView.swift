@@ -9,16 +9,12 @@ import SwiftUI
 
 struct PageView: View {
     var imageName: String
-    @State var imageWidth: CGFloat
-    @State var imageHeight: CGFloat
+    var width: CGFloat
+    var height: CGFloat
     @Binding var isHeartFilled: Bool
     
     var body: some View {
-        ZStack{
-            Image(imageName)
-                .resizable()
-                .scaledToFit()
-            
+        VStack{
             HStack {
                 Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
                     Text("Rec")
@@ -43,24 +39,29 @@ struct PageView: View {
                 })
                 .buttonStyle(.borderedProminent)
                 .tint(Color(red: 0.87, green: 0.78, blue: 0.75))
+                
+                Spacer()
             }
-            .frame(
-                maxWidth: imageWidth,
-                maxHeight: imageHeight,
-                alignment: .topLeading
-            )
-            .padding()
+            .padding([.top, .leading])
             
             Spacer()
             
-            CardView(isHeartFilled: $isHeartFilled)
-                .background(.thinMaterial)
-                .padding()
-                .frame(
-                    maxWidth: imageWidth,
-                    maxHeight: imageHeight,
-                    alignment: .bottomLeading
-                )
+            CardView(width: width * 0.9, height: height,
+                isHeartFilled: $isHeartFilled)
+            .padding([.leading, .trailing, .bottom])
+
+                
         }
+        .frame(width: width, height: height)
+        .background(
+            Image(imageName)
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+        )
+        .cornerRadius(20)
     }
+}
+
+#Preview {
+    ContentView()
 }

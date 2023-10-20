@@ -56,12 +56,17 @@ struct HeaderView: View {
                     alignment: .top
                 )
                 
-                Spacer()
-                
-                ScrollView {
-                    PageView(imageName: "margarita-1", imageWidth: geometry.size.width, imageHeight: geometry.size.height, isHeartFilled: $isHeartFilledP1)
-                    PageView(imageName: "cake-1", imageWidth: geometry.size.width, imageHeight: geometry.size.height, isHeartFilled: $isHeartFilledP2)
+                VStack {
+                    Spacer()
+                    
+                    ScrollView {
+                        PageView(imageName: "margarita-1", width: geometry.size.width * 0.9, height: geometry.size.height * 0.8, isHeartFilled: $isHeartFilledP1)
+                        
+                        PageView(imageName: "cake-1", width: geometry.size.width * 0.9, height: geometry.size.height * 0.8, isHeartFilled: $isHeartFilledP2)
+                    }
                 }
+                .frame(width: geometry.size.width)
+                .background(Color(red: 0.87, green: 0.78, blue: 0.75))
             }
         }
     }
